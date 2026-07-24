@@ -1,0 +1,53 @@
+# DEV/BUILD OUTPUTS
+.output
+.data
+.cache
+dist
+.expo/
+web-build/
+expo-env.d.ts
+
+# NATIVE
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# GENERATED NATIVE FOLDERS
+ios
+android
+
+# METRO
+.metro-health-check*
+
+# NODE DEPENDENCIES
+node_modules
+
+# LOGS
+logs
+*.log
+
+# MISC / OS
+.DS_Store
+
+# LOCAL ENV FILES (KEEP ONLY EXAMPLE IN GIT)
+.env
+.env.*
+!.env.example
+
+# IDEs / EDITORS
+.vscode
+.idea
+*.iml
+
+# DEBUG
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# TEMP DIRS
+.temp
+.tmp
