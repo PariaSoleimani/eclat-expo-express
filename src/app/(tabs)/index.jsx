@@ -56,17 +56,15 @@ const HomeScreen = () => {
 							<Text style={styles.link}>View all</Text>
 						</Pressable>
 					</View>
-					<ScrollView
-						horizontal
-						showsHorizontalScrollIndicator={false}>
+					<View style={styles.productGrid}>
 						{featuredProducts.map(product => (
-							<ProductCard
+							<View
 								key={product.id}
-								product={product}
-								compact
-							/>
+								style={styles.productGridItem}>
+								<ProductCard product={product} />
+							</View>
 						))}
-					</ScrollView>
+					</View>
 				</View>
 			</ScrollView>
 		</View>
@@ -80,6 +78,8 @@ const styles = StyleSheet.create({
 	sectionHeading: { alignItems: 'center', flexDirection: 'row', justifyContent: 'space-between', marginBottom: 14 },
 	sectionTitle: { color: COLORS.primary.DEFAULT, fontSize: 20, fontWeight: '800' },
 	link: { color: COLORS.accent[900], fontSize: 13, fontWeight: '700' },
+	productGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 14 },
+	productGridItem: { flexBasis: '48%' },
 });
 
 export default HomeScreen;
