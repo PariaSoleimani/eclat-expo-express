@@ -84,6 +84,7 @@ const styles = StyleSheet.create({
 		letterSpacing: 3,
 		textAlign: 'center',
 		paddingLeft: 15,
+		textTransform: 'uppercase'
 	},
 	actions: { alignItems: 'center', flexDirection: 'row', gap: 16 },
 	badge: {

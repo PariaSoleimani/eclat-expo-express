@@ -1,10 +1,10 @@
-import Header from '@/components/Header';
+import { useRouter } from 'expo-router';
+import { FlatList, StyleSheet, View } from 'react-native';
 import ScreenState from '@/components/common/ScreenState';
+import Header from '@/components/Header';
 import ProductCard from '@/components/products/ProductCard';
 import useFetch from '@/hooks/useFetch';
 import { COLORS } from '@/lib/colors';
-import { useRouter } from 'expo-router';
-import { FlatList, StyleSheet, View } from 'react-native';
 
 const WishlistScreen = () => {
 	const router = useRouter();
@@ -22,7 +22,7 @@ const WishlistScreen = () => {
 				keyExtractor={item => item.id}
 				ListEmptyComponent={
 					<ScreenState
-						icon="heart-outline"
+						icon="heart"
 						title="Your wishlist is waiting"
 						description="Save pieces you love to find them here."
 						actionLabel="Explore jewelry"
