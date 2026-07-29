@@ -5,7 +5,6 @@ import { KeyboardAvoidingView, Platform, Pressable, StyleSheet, Text, TextInput,
 import { useAuth } from '@/context/AuthContext';
 import { COLORS } from '@/lib/colors';
 
-
 const Field = ({ label, ...props }) => (
 	<View>
 		<Text style={styles.label}>{label}</Text>
@@ -58,7 +57,7 @@ const AuthScreen = () => {
 						style={{ transform: [{ translateY: 2 }] }}
 					/>
 				</View>
-				<Text style={styles.brand}>ATELIER SOL</Text>
+				<Text style={styles.brand}>ÉCLAT</Text>
 				<Text style={styles.title}>
 					{step === 'details' ? 'Welcome to the collection' : 'Verify your number'}
 				</Text>

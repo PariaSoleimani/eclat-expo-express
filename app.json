@@ -1,7 +1,7 @@
 {
 	"expo": {
-		"name": "Atelier Sol",
-		"slug": "atelier-sol",
+		"name": "Éclat",
+		"slug": "eclat",
 		"version": "1.0.0",
 		"orientation": "portrait",
 		"icon": "./src/assets/icon.png",

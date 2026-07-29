@@ -38,7 +38,7 @@ const Header = ({ title, showBack, showSearch, showCart, showLogo }) => {
 				)}
 			</View>
 
-			<Text style={styles.title}>{showLogo ? 'ATELIER SOL' : title}</Text>
+			<Text style={styles.title}>{showLogo ? 'ÉCLAT' : title}</Text>
 
 			<View style={styles.actions}>
 				{showCart && (
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
 		letterSpacing: 3,
 		textAlign: 'center',
 		paddingLeft: 15,
-		textTransform: 'uppercase'
+		textTransform: 'uppercase',
 	},
 	actions: { alignItems: 'center', flexDirection: 'row', gap: 16 },
 	badge: {
