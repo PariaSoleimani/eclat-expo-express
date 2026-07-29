@@ -57,10 +57,10 @@ const HomeScreen = () => {
 						</Pressable>
 					</View>
 					<View style={styles.productGrid}>
-						{featuredProducts.map(product => (
+						{featuredProducts.map((product, index) => (
 							<View
 								key={product.id}
-								style={styles.productGridItem}>
+								style={[styles.productGridItem, index % 2 !== 0 && styles.rightItem]}>
 								<ProductCard product={product} />
 							</View>
 						))}
@@ -78,8 +78,9 @@ const styles = StyleSheet.create({
 	sectionHeading: { alignItems: 'center', flexDirection: 'row', justifyContent: 'space-between', marginBottom: 14 },
 	sectionTitle: { color: COLORS.primary.DEFAULT, fontSize: 20, fontWeight: '800' },
 	link: { color: COLORS.accent[900], fontSize: 13, fontWeight: '700' },
-	productGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 14 },
-	productGridItem: { flexBasis: '48%' },
+	productGrid: { flexDirection: 'row', flexWrap: 'wrap', flex: 1 },
+	productGridItem: { flexBasis: '48%', marginBottom: 14 },
+	rightItem: { marginLeft: 14 },
 });
 
 export default HomeScreen;
