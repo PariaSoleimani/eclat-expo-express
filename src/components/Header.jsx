@@ -1,4 +1,4 @@
-import { Ionicons } from '@expo/vector-icons';
+import { Feather, Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import useFetch from '@/hooks/useFetch';
@@ -16,8 +16,8 @@ const Header = ({ title, showBack, showSearch, showCart, showLogo }) => {
 						android_ripple={{ color: COLORS.primary[300], borderless: false }}
 						hitSlop={8}
 						onPress={() => router.back()}>
-						<Ionicons
-							name="arrow-back"
+						<Feather
+							name="arrow-left"
 							size={24}
 							color={COLORS.primary.DEFAULT}
 						/>
