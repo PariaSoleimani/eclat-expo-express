@@ -1,6 +1,6 @@
 import { useRouter } from 'expo-router';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-// import BannerCarousel from '@/components/BannerCarousel';
+import BannerCarousel from '@/components/BannerCarousel';
 import CategoryItem from '@/components/CategoryItem';
 import Header from '@/components/Header';
 import ProductCard from '@/components/products/ProductCard';
@@ -9,7 +9,7 @@ import { COLORS } from '@/lib/colors';
 
 const HomeScreen = () => {
 	const router = useRouter();
-	const { jewelryTypes, products } = useFetch();
+	const { banners, jewelryTypes, products } = useFetch();
 	const featuredProducts = products.filter(product => product.isFeatured).slice(0, 4);
 
 	return (
@@ -23,6 +23,11 @@ const HomeScreen = () => {
 			<ScrollView
 				contentContainerStyle={styles.content}
 				showsVerticalScrollIndicator={false}>
+				<BannerCarousel
+					banners={banners}
+					paddingHorizontal={18}
+					onExplore={() => router.push('/shop')}
+				/>
 				<View style={styles.section}>
 					<View style={styles.sectionHeading}>
 						<Text style={styles.sectionTitle}>Explore by collection</Text>
