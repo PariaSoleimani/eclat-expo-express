@@ -8,7 +8,9 @@
 		"start": "expo start",
 		"android": "expo start --android",
 		"ios": "expo start --ios",
-		"web": "expo start --web"
+		"web": "expo start --web",
+		"lint": "biome check .",
+		"format": "biome format --write ."
 	},
 	"dependencies": {
 		"@expo/vector-icons": "^15.1.1",

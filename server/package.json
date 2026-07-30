@@ -6,10 +6,13 @@
 	"type": "module",
 	"scripts": {
 		"start": "NODE_ENV=production node server",
-		"dev": "nodemon server"
+		"dev": "nodemon server",
+		"lint": "biome check .",
+		"format": "biome format --write ."
 	},
 	"dependencies": {
-		"express": "^5.2.1"
+		"express": "^5.2.1",
+		"pg": "^8.22.0"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.5.6",
