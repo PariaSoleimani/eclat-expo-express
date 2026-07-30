@@ -3,10 +3,10 @@ import authRoutes from '#routes/auth.js';
 import blogPostRoutes from '#routes/blog-posts.js';
 import healthRoute from '#routes/health.js';
 
-const apiRouter = express.Router();
+const router = express.Router();
 
-apiRouter.use('/auth', authRoutes);
-apiRouter.use('/health', healthRoute);
-apiRouter.use('/blog-posts', blogPostRoutes);
+router.use('/auth', authRoutes);
+router.use('/health', healthRoute);
+router.use('/blog-posts', blogPostRoutes);
 
-export default apiRouter;
+export default router;

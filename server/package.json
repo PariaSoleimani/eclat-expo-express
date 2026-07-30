@@ -6,7 +6,9 @@
 	"type": "module",
 	"imports": {
 		"#config/*": "./src/config/*",
+		"#controllers/*": "./src/controllers/*",
 		"#database/*": "./src/database/*",
+		"#repositories/*": "./src/database/repositories/*",
 		"#routes/*": "./src/routes/*",
 		"#middleware/*": "./src/middleware/*",
 		"#utils/*": "./src/utils/*"
