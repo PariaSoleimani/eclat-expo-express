@@ -1,0 +1,583 @@
+{
+	"users": [
+		{
+			"id": "c4ce476b-704e-4bea-af5a-8c02c183bb81",
+			"name": "Aria Morris",
+			"phone": "+15551230001",
+			"password_hash": "$2b$10$4m8uH8N.C4Bi.UKYxfhiv.MFVBPh/6i2K.ZfNFik5qXbEMA4g074S",
+			"url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=240&q=80"
+		},
+		{
+			"id": "158f7db9-0f54-411a-b9fe-7ad1282664e9",
+			"name": "James Bell",
+			"phone": "+15551230002",
+			"password_hash": "$2b$10$4m8uH8N.C4Bi.UKYxfhiv.MFVBPh/6i2K.ZfNFik5qXbEMA4g074S",
+			"url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=240&q=80"
+		}
+	],
+	"addresses": [
+		{
+			"id": "a5b46cbc-98a8-4b01-b89a-4789bfa2555c",
+			"user_id": "c4ce476b-704e-4bea-af5a-8c02c183bb81",
+			"label": "Home",
+			"recipient": "Aria Morris",
+			"city": "Paris",
+			"postal_code": "75001",
+			"country": "France",
+			"is_default": true,
+			"details": "82 Rue de Rivoli"
+		}
+	],
+	"categories": [
+		{
+			"id": "287ce38e-ca4e-46a5-ac05-68c0c0248724",
+			"slug": "new-arrivals",
+			"name": "New Arrivals",
+			"sort_order": 1
+		},
+		{
+			"id": "8ebdd78b-c151-4651-ae0b-a7cfb6da9563",
+			"slug": "everyday-icons",
+			"name": "Everyday Icons",
+			"sort_order": 2
+		},
+		{
+			"id": "81a36bf6-ab81-49a1-93f3-56f44a0d4d74",
+			"slug": "gifts",
+			"name": "Gift Ideas",
+			"sort_order": 3
+		}
+	],
+	"colors": [
+		{
+			"id": "b210c430-e87e-4993-847f-33887994f6e4",
+			"name": "Yellow Gold",
+			"hex": "#C9A55A",
+			"slug": "yellow-gold"
+		},
+		{
+			"id": "d5680d55-6d15-4d9e-8b38-1668fa8cdf16",
+			"name": "Rose Gold",
+			"hex": "#B76E79",
+			"slug": "rose-gold"
+		},
+		{
+			"id": "a0a66363-4e52-4f31-a24a-e07259018327",
+			"name": "Sterling Silver",
+			"hex": "#C6C7C5",
+			"slug": "silver"
+		},
+		{
+			"id": "66f5f2d5-a911-49ed-8585-42a27dd8a931",
+			"name": "Onyx Black",
+			"hex": "#1E1B18",
+			"slug": "black"
+		}
+	],
+	"product_types": [
+		{
+			"id": "41f1e230-5c73-4701-8ac9-7cb40c8f659f",
+			"name": "Rings",
+			"slug": "ring"
+		},
+		{
+			"id": "1fe26694-4f0a-476f-86cc-692341f92c37",
+			"name": "Necklaces",
+			"slug": "necklace"
+		},
+		{
+			"id": "fb1cf00e-1b89-41f7-9c49-fbfb1254c3f1",
+			"name": "Bracelets",
+			"slug": "bracelet"
+		},
+		{
+			"id": "5ac00ead-a59a-453c-a50d-c71eb9d21542",
+			"name": "Earrings",
+			"slug": "earring"
+		},
+		{
+			"id": "ccb41b97-07b3-46df-86e9-d402e2352589",
+			"name": "Watches",
+			"slug": "watch"
+		}
+	],
+	"materials": [
+		{
+			"id": "d630455b-1e7f-4fc2-91f8-30d07935bee4",
+			"slug": "gold-vermeil",
+			"name": "Gold Vermeil"
+		},
+		{
+			"id": "4deb538c-1f22-462e-9092-e00b9f115483",
+			"slug": "sterling-silver",
+			"name": "Sterling Silver"
+		},
+		{
+			"id": "9d621815-e59a-41cb-bdd2-c77e07d4e790",
+			"slug": "black-onyx",
+			"name": "Black Onyx"
+		},
+		{
+			"id": "d9a64c70-fa40-449d-8560-4c55deb9e169",
+			"slug": "stainless-steel",
+			"name": "Stainless Steel"
+		},
+		{
+			"id": "6683a072-18b4-437e-8378-f822762c8243",
+			"slug": "leather",
+			"name": "Leather"
+		},
+		{
+			"id": "014225c9-8252-43f3-8d47-06f831253fdc",
+			"slug": "rose-gold-vermeil",
+			"name": "Rose Gold Vermeil"
+		}
+	],
+	"banners": [
+		{
+			"id": "46809464-8023-4741-af2e-364ab24cb379",
+			"title": "Modern heirlooms",
+			"subtitle": "Made to mark every moment",
+			"sort_order": 1,
+			"url": "https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1200&q=85"
+		},
+		{
+			"id": "436b3922-d2ef-419a-b828-0d97805213d1",
+			"title": "The gold edit",
+			"subtitle": "Quietly luminous, always personal",
+			"sort_order": 2,
+			"url": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1200&q=85"
+		}
+	],
+	"blog_posts": [
+		{
+			"id": "e2731ec7-3e01-4057-b1fc-4d55ab7b9de0",
+			"slug": "jewelry-care-guide",
+			"title": "The essential jewelry care guide",
+			"excerpt": "A few thoughtful rituals keep your favorite pieces luminous for years to come.",
+			"read_time": "4 min read",
+			"category": "Care",
+			"content": [
+				"Jewelry is made for living in, but a little care preserves its quiet brilliance. Build a simple routine around the pieces you wear most.",
+				"Remove your jewelry before swimming, showering, exercising, or applying fragrance and lotions. Moisture and everyday products can leave a residue on precious metals and stones.",
+				"Store each piece separately in a soft pouch or lined box. This prevents chains from tangling and helps protect polished surfaces from scratches.",
+				"To refresh its shine, wipe your jewelry with a soft, dry cloth after wearing. For delicate pieces and gemstones, avoid abrasive cleaners and seek professional advice when needed."
+			],
+			"url": "https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1200&q=85",
+			"created_at": "2026-07-20T09:00:00Z"
+		},
+		{
+			"id": "f097f014-6eb5-449d-a020-90f39b8934e1",
+			"slug": "how-to-choose-a-meaningful-gift",
+			"title": "How to choose a meaningful gift",
+			"excerpt": "From everyday signatures to milestone pieces, find a gift that feels considered and personal.",
+			"read_time": "3 min read",
+			"category": "Gifting",
+			"content": [
+				"The most memorable gifts begin with a small observation: what someone wears every day, the colors they reach for, or a moment worth marking.",
+				"Choose a versatile silhouette for an everyday piece, or select a more distinctive design for a milestone. A thoughtful note makes the final detail feel entirely personal."
+			],
+			"url": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1200&q=85",
+			"created_at": "2026-07-12T09:00:00Z"
+		},
+		{
+			"id": "21b6fe9a-a779-40e8-928b-fc542a749469",
+			"slug": "the-art-of-layering",
+			"title": "The art of layering",
+			"excerpt": "Create a jewelry wardrobe with considered proportions, texture, and a little contrast.",
+			"read_time": "5 min read",
+			"category": "Styling",
+			"content": [
+				"Layering is an exercise in balance. Begin with one piece that feels like your signature, then add a contrasting length, texture, or scale.",
+				"Leave space between necklaces, stack rings across both hands, or pair a refined chain with a more sculptural pendant. The result should feel collected, not crowded."
+			],
+			"url": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1200&q=85",
+			"created_at": "2026-07-05T09:00:00Z"
+		}
+	],
+	"products": [
+		{
+			"id": "dedd3351-1cb6-418e-b239-57743ffe909f",
+			"sku": "EC-M-SIG-001",
+			"name": "Atlas Signet Ring",
+			"description": "A polished 14K gold vermeil signet ring with a substantial, balanced profile.",
+			"audience": "men",
+			"base_price": 185,
+			"gemstone": null,
+			"rating": 4.8,
+			"review_count": 48,
+			"created_at": "2026-06-12T00:00:00Z",
+			"product_type_id": "41f1e230-5c73-4701-8ac9-7cb40c8f659f"
+		},
+		{
+			"id": "c90a3c5d-ba78-40fe-946b-60439e85c1ad",
+			"sku": "EC-M-CUR-002",
+			"name": "Curb Chain Necklace",
+			"description": "A refined sterling silver curb chain with a clean, everyday finish.",
+			"audience": "men",
+			"base_price": 145,
+			"gemstone": null,
+			"rating": 4.7,
+			"review_count": 36,
+			"created_at": "2026-06-04T00:00:00Z",
+			"product_type_id": "1fe26694-4f0a-476f-86cc-692341f92c37"
+		},
+		{
+			"id": "c8b4100e-e9b0-41ee-952b-950fe83aabfe",
+			"sku": "EC-M-ONX-003",
+			"name": "Onyx Bead Bracelet",
+			"description": "Hand-strung black onyx beads finished with a discreet gold clasp.",
+			"audience": "men",
+			"base_price": 98,
+			"gemstone": "Onyx",
+			"rating": 4.9,
+			"review_count": 21,
+			"created_at": "2026-05-20T00:00:00Z",
+			"product_type_id": "fb1cf00e-1b89-41f7-9c49-fbfb1254c3f1"
+		},
+		{
+			"id": "8bc67d19-65f0-4744-b4af-2127400ac7e5",
+			"sku": "EC-M-WAT-004",
+			"name": "Classic Leather Watch",
+			"description": "A slim black leather watch with a brushed gold-tone case.",
+			"audience": "men",
+			"base_price": 220,
+			"gemstone": null,
+			"rating": 4.6,
+			"review_count": 17,
+			"created_at": "2026-05-13T00:00:00Z",
+			"product_type_id": "ccb41b97-07b3-46df-86e9-d402e2352589"
+		},
+		{
+			"id": "6b16354b-e0f8-412f-828e-9dc033d0841f",
+			"sku": "EC-W-SOL-005",
+			"name": "Solitaire Pendant",
+			"description": "A brilliant-cut crystal solitaire suspended from a delicate gold chain.",
+			"audience": "women",
+			"base_price": 165,
+			"gemstone": "Crystal",
+			"rating": 4.9,
+			"review_count": 63,
+			"created_at": "2026-06-18T00:00:00Z",
+			"product_type_id": "1fe26694-4f0a-476f-86cc-692341f92c37"
+		},
+		{
+			"id": "130456cd-d24e-41c3-ac2c-83733b97a97d",
+			"sku": "EC-W-HOO-006",
+			"name": "Sculpted Mini Hoops",
+			"description": "Softly sculpted hoops designed for comfortable, all-day wear.",
+			"audience": "women",
+			"base_price": 112,
+			"gemstone": null,
+			"rating": 4.8,
+			"review_count": 54,
+			"created_at": "2026-06-01T00:00:00Z",
+			"product_type_id": "5ac00ead-a59a-453c-a50d-c71eb9d21542"
+		},
+		{
+			"id": "d8339b2a-8ba7-41aa-88cd-1846f33eabce",
+			"sku": "EC-W-ETE-007",
+			"name": "Eternity Band",
+			"description": "A slim pavé-inspired band that layers effortlessly or shines alone.",
+			"audience": "women",
+			"base_price": 156,
+			"gemstone": "Cubic zirconia",
+			"rating": 4.7,
+			"review_count": 29,
+			"created_at": "2026-05-28T00:00:00Z",
+			"product_type_id": "41f1e230-5c73-4701-8ac9-7cb40c8f659f"
+		},
+		{
+			"id": "e2be4a2a-fb4b-40be-8474-c02cdcb34b83",
+			"sku": "EC-W-PEA-008",
+			"name": "Pearl Drop Earrings",
+			"description": "Freshwater pearl drops with a minimalist gold setting.",
+			"audience": "women",
+			"base_price": 138,
+			"gemstone": "Freshwater pearl",
+			"rating": 4.8,
+			"review_count": 41,
+			"created_at": "2026-05-08T00:00:00Z",
+			"product_type_id": "5ac00ead-a59a-453c-a50d-c71eb9d21542"
+		}
+	],
+	"product_categories": [
+		{
+			"product_id": "dedd3351-1cb6-418e-b239-57743ffe909f",
+			"category_id": "287ce38e-ca4e-46a5-ac05-68c0c0248724"
+		},
+		{
+			"product_id": "c90a3c5d-ba78-40fe-946b-60439e85c1ad",
+			"category_id": "287ce38e-ca4e-46a5-ac05-68c0c0248724"
+		},
+		{
+			"product_id": "6b16354b-e0f8-412f-828e-9dc033d0841f",
+			"category_id": "287ce38e-ca4e-46a5-ac05-68c0c0248724"
+		},
+		{
+			"product_id": "130456cd-d24e-41c3-ac2c-83733b97a97d",
+			"category_id": "287ce38e-ca4e-46a5-ac05-68c0c0248724"
+		},
+		{
+			"product_id": "dedd3351-1cb6-418e-b239-57743ffe909f",
+			"category_id": "8ebdd78b-c151-4651-ae0b-a7cfb6da9563"
+		},
+		{
+			"product_id": "c90a3c5d-ba78-40fe-946b-60439e85c1ad",
+			"category_id": "8ebdd78b-c151-4651-ae0b-a7cfb6da9563"
+		},
+		{
+			"product_id": "c8b4100e-e9b0-41ee-952b-950fe83aabfe",
+			"category_id": "8ebdd78b-c151-4651-ae0b-a7cfb6da9563"
+		},
+		{
+			"product_id": "d8339b2a-8ba7-41aa-88cd-1846f33eabce",
+			"category_id": "8ebdd78b-c151-4651-ae0b-a7cfb6da9563"
+		},
+		{
+			"product_id": "e2be4a2a-fb4b-40be-8474-c02cdcb34b83",
+			"category_id": "8ebdd78b-c151-4651-ae0b-a7cfb6da9563"
+		},
+		{
+			"product_id": "8bc67d19-65f0-4744-b4af-2127400ac7e5",
+			"category_id": "81a36bf6-ab81-49a1-93f3-56f44a0d4d74"
+		},
+		{
+			"product_id": "6b16354b-e0f8-412f-828e-9dc033d0841f",
+			"category_id": "81a36bf6-ab81-49a1-93f3-56f44a0d4d74"
+		},
+		{
+			"product_id": "130456cd-d24e-41c3-ac2c-83733b97a97d",
+			"category_id": "81a36bf6-ab81-49a1-93f3-56f44a0d4d74"
+		},
+		{
+			"product_id": "e2be4a2a-fb4b-40be-8474-c02cdcb34b83",
+			"category_id": "81a36bf6-ab81-49a1-93f3-56f44a0d4d74"
+		}
+	],
+	"product_materials": [
+		{
+			"product_id": "dedd3351-1cb6-418e-b239-57743ffe909f",
+			"material_id": "d630455b-1e7f-4fc2-91f8-30d07935bee4"
+		},
+		{
+			"product_id": "c90a3c5d-ba78-40fe-946b-60439e85c1ad",
+			"material_id": "4deb538c-1f22-462e-9092-e00b9f115483"
+		},
+		{
+			"product_id": "c8b4100e-e9b0-41ee-952b-950fe83aabfe",
+			"material_id": "9d621815-e59a-41cb-bdd2-c77e07d4e790"
+		},
+		{
+			"product_id": "c8b4100e-e9b0-41ee-952b-950fe83aabfe",
+			"material_id": "d630455b-1e7f-4fc2-91f8-30d07935bee4"
+		},
+		{
+			"product_id": "8bc67d19-65f0-4744-b4af-2127400ac7e5",
+			"material_id": "d9a64c70-fa40-449d-8560-4c55deb9e169"
+		},
+		{
+			"product_id": "8bc67d19-65f0-4744-b4af-2127400ac7e5",
+			"material_id": "6683a072-18b4-437e-8378-f822762c8243"
+		},
+		{
+			"product_id": "6b16354b-e0f8-412f-828e-9dc033d0841f",
+			"material_id": "d630455b-1e7f-4fc2-91f8-30d07935bee4"
+		},
+		{
+			"product_id": "130456cd-d24e-41c3-ac2c-83733b97a97d",
+			"material_id": "d630455b-1e7f-4fc2-91f8-30d07935bee4"
+		},
+		{
+			"product_id": "d8339b2a-8ba7-41aa-88cd-1846f33eabce",
+			"material_id": "014225c9-8252-43f3-8d47-06f831253fdc"
+		},
+		{
+			"product_id": "e2be4a2a-fb4b-40be-8474-c02cdcb34b83",
+			"material_id": "d630455b-1e7f-4fc2-91f8-30d07935bee4"
+		}
+	],
+	"product_images": [
+		{
+			"id": "2493b9cd-73ec-44ba-b9d4-aa29d93e2bd6",
+			"product_id": "dedd3351-1cb6-418e-b239-57743ffe909f",
+			"url": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=700&q=85",
+			"is_primary": true
+		},
+		{
+			"id": "af44f42c-d1f8-49db-907f-a3a242ba10b3",
+			"product_id": "c90a3c5d-ba78-40fe-946b-60439e85c1ad",
+			"url": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=85",
+			"is_primary": true
+		},
+		{
+			"id": "dfb8b3a3-0b85-44be-a3d0-3ce0f70620da",
+			"product_id": "c8b4100e-e9b0-41ee-952b-950fe83aabfe",
+			"url": "https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=85",
+			"is_primary": true
+		},
+		{
+			"id": "80a00b34-5af5-45af-b431-c0b5d6a9aeca",
+			"product_id": "8bc67d19-65f0-4744-b4af-2127400ac7e5",
+			"url": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=700&q=85",
+			"is_primary": true
+		},
+		{
+			"id": "683d8eaa-cf6b-41b9-ba17-c822729dcf24",
+			"product_id": "6b16354b-e0f8-412f-828e-9dc033d0841f",
+			"url": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=700&q=85",
+			"is_primary": true
+		},
+		{
+			"id": "d9f6ab3a-0c03-4fa9-a553-bf1fb438ccbc",
+			"product_id": "130456cd-d24e-41c3-ac2c-83733b97a97d",
+			"url": "https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&w=700&q=85",
+			"is_primary": true
+		},
+		{
+			"id": "e3bbe5a0-8d4e-4a78-985c-183d2154a286",
+			"product_id": "d8339b2a-8ba7-41aa-88cd-1846f33eabce",
+			"url": "https://images.unsplash.com/photo-1603561596112-db1d4a85c5c7?auto=format&fit=crop&w=700&q=85",
+			"is_primary": true
+		},
+		{
+			"id": "c9c0d0b3-d197-4ed3-babe-6e53664a1bda",
+			"product_id": "e2be4a2a-fb4b-40be-8474-c02cdcb34b83",
+			"url": "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&w=700&q=85",
+			"is_primary": true
+		}
+	],
+	"product_variants": [
+		{
+			"id": "b5a9fcaf-f1a8-435f-ac54-f0e37042aca7",
+			"product_id": "dedd3351-1cb6-418e-b239-57743ffe909f",
+			"color_id": "b210c430-e87e-4993-847f-33887994f6e4",
+			"size_label": "8",
+			"stock": 8,
+			"price_delta": 0
+		},
+		{
+			"id": "de581f2f-6934-4e6e-8d32-4654c1c6ae7b",
+			"product_id": "dedd3351-1cb6-418e-b239-57743ffe909f",
+			"color_id": "b210c430-e87e-4993-847f-33887994f6e4",
+			"size_label": "10",
+			"stock": 12,
+			"price_delta": 0
+		},
+		{
+			"id": "7f41459b-f118-492c-a731-fb11ed0d03a6",
+			"product_id": "c90a3c5d-ba78-40fe-946b-60439e85c1ad",
+			"color_id": "a0a66363-4e52-4f31-a24a-e07259018327",
+			"size_label": "20 in",
+			"stock": 14,
+			"price_delta": 0
+		},
+		{
+			"id": "19022bb9-2620-4785-a507-a7b2361404e3",
+			"product_id": "c8b4100e-e9b0-41ee-952b-950fe83aabfe",
+			"color_id": "66f5f2d5-a911-49ed-8585-42a27dd8a931",
+			"size_label": "One size",
+			"stock": 20,
+			"price_delta": 0
+		},
+		{
+			"id": "dd88cde8-ae6d-42fc-843e-4d589e10cb89",
+			"product_id": "8bc67d19-65f0-4744-b4af-2127400ac7e5",
+			"color_id": "66f5f2d5-a911-49ed-8585-42a27dd8a931",
+			"size_label": "One size",
+			"stock": 5,
+			"price_delta": 0
+		},
+		{
+			"id": "6da76d42-0d7a-4a0b-afb2-adc87418cfb1",
+			"product_id": "6b16354b-e0f8-412f-828e-9dc033d0841f",
+			"color_id": "b210c430-e87e-4993-847f-33887994f6e4",
+			"size_label": "18 in",
+			"stock": 10,
+			"price_delta": 0
+		},
+		{
+			"id": "10a1d61b-e18a-430b-9fbc-49de73451485",
+			"product_id": "130456cd-d24e-41c3-ac2c-83733b97a97d",
+			"color_id": "b210c430-e87e-4993-847f-33887994f6e4",
+			"size_label": "One size",
+			"stock": 18,
+			"price_delta": 0
+		},
+		{
+			"id": "c2aba129-3c23-4225-9ec8-789e672261c4",
+			"product_id": "d8339b2a-8ba7-41aa-88cd-1846f33eabce",
+			"color_id": "d5680d55-6d15-4d9e-8b38-1668fa8cdf16",
+			"size_label": "6",
+			"stock": 9,
+			"price_delta": 0
+		},
+		{
+			"id": "10ab3603-9a69-4a7a-8c64-656371e4d385",
+			"product_id": "e2be4a2a-fb4b-40be-8474-c02cdcb34b83",
+			"color_id": "b210c430-e87e-4993-847f-33887994f6e4",
+			"size_label": "One size",
+			"stock": 12,
+			"price_delta": 0
+		}
+	],
+	"wishlists": [
+		{
+			"id": "b8d4fb6d-2041-4b77-bbd1-d5955bdeceb2",
+			"user_id": "c4ce476b-704e-4bea-af5a-8c02c183bb81"
+		}
+	],
+	"wishlist_items": [
+		{
+			"id": "13e19721-1936-4d7a-9687-4116a16af132",
+			"wishlist_id": "b8d4fb6d-2041-4b77-bbd1-d5955bdeceb2",
+			"product_id": "130456cd-d24e-41c3-ac2c-83733b97a97d"
+		}
+	],
+	"carts": [
+		{
+			"id": "ad58c1a0-be8e-4396-9694-29d3fbd6b28e",
+			"user_id": "c4ce476b-704e-4bea-af5a-8c02c183bb81"
+		}
+	],
+	"cart_items": [
+		{
+			"id": "4ec26155-f555-4750-b5a4-694195711a06",
+			"cart_id": "ad58c1a0-be8e-4396-9694-29d3fbd6b28e",
+			"variant_id": "6da76d42-0d7a-4a0b-afb2-adc87418cfb1",
+			"quantity": 1
+		}
+	],
+	"orders": [
+		{
+			"id": "25143bdb-53e2-41ce-a323-7c63b7011b5e",
+			"user_id": "158f7db9-0f54-411a-b9fe-7ad1282664e9",
+			"status": "shipped",
+			"created_at": "2026-07-26T09:30:00Z",
+			"shipping_address": "14 Rose Street, London"
+		},
+		{
+			"id": "4108a8cf-2789-4573-8914-22c94c362285",
+			"user_id": "c4ce476b-704e-4bea-af5a-8c02c183bb81",
+			"status": "completed",
+			"created_at": "2026-07-18T12:15:00Z",
+			"shipping_address": "82 Rue de Rivoli, Paris"
+		}
+	],
+	"order_items": [
+		{
+			"id": "f096c47d-00eb-4ce6-a791-6f0e7b229d2f",
+			"order_id": "25143bdb-53e2-41ce-a323-7c63b7011b5e",
+			"variant_id": "de581f2f-6934-4e6e-8d32-4654c1c6ae7b",
+			"quantity": 1,
+			"unit_price": 185
+		},
+		{
+			"id": "6b226d6a-bea8-4567-8bd1-dac5b094dc1e",
+			"order_id": "4108a8cf-2789-4573-8914-22c94c362285",
+			"variant_id": "10a1d61b-e18a-430b-9fbc-49de73451485",
+			"quantity": 2,
+			"unit_price": 112
+		}
+	]
+}
