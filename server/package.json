@@ -4,19 +4,33 @@
 	"main": "server.js",
 	"private": true,
 	"type": "module",
+	"imports": {
+		"#config/*": "./src/config/*",
+		"#database/*": "./src/database/*",
+		"#routes/*": "./src/routes/*",
+		"#middleware/*": "./src/middleware/*",
+		"#utils/*": "./src/utils/*"
+	},
 	"scripts": {
 		"start": "NODE_ENV=production node server",
 		"dev": "nodemon server",
+		"docker:up": "docker compose -f ../compose.yaml up -d",
+		"docker:down": "docker compose -f ../compose.yaml down",
+		"docker:restart": "docker compose -f ../compose.yaml restart",
+		"docker:logs": "docker compose -f ../compose.yaml logs -f",
+		"db:migrate": "node src/scripts/migrate.js",
+		"db:seed": "node src/scripts/seed.js",
+		"db:setup": "bun run docker:up && bun run db:migrate && bun run db:seed",
 		"lint": "biome check .",
 		"format": "biome format --write ."
 	},
 	"dependencies": {
+		"dotenv": "^17.4.2",
 		"express": "^5.2.1",
 		"pg": "^8.22.0"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.5.6",
-		"dotenv": "^17.4.2",
 		"nodemon": "^3.1.14"
 	}
 }
