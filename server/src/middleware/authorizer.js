@@ -1,20 +1,17 @@
+import { HttpError } from '#utils/error.js';
 import { verifyToken } from '#utils/jwt.js';
 
-const requireAuth = (req, res, next) => {
+const authorizeUser = (req, _res, next) => {
 	const header = req.get('authorization');
 
 	if (!header?.startsWith('Bearer ')) {
-		return res.status(401).json({
-			message: 'Authentication required.',
-		});
+		return next(new HttpError(401, 'Authentication required.'));
 	}
 
 	const token = header.slice('Bearer '.length).trim();
 
 	if (!token) {
-		return res.status(401).json({
-			message: 'Authentication required.',
-		});
+		return next(new HttpError(401, 'Authentication required.'));
 	}
 
 	try {
@@ -25,10 +22,8 @@ const requireAuth = (req, res, next) => {
 		};
 		return next();
 	} catch {
-		return res.status(401).json({
-			message: 'Invalid or expired token.',
-		});
+		return next(new HttpError(401, 'Invalid or expired token.'));
 	}
 };
 
-export default requireAuth;
+export default authorizeUser;
