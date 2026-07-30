@@ -1,5 +1,5 @@
 {
-	"name": "starter-expo",
+	"name": "eclat-client",
 	"version": "1.0.0",
 	"main": "expo-router/entry",
 	"private": true,
@@ -39,7 +39,7 @@
 		"react-native-web": "^0.21.2"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.5.4",
+		"@biomejs/biome": "^2.5.6",
 		"babel-preset-expo": "54.0.10"
 	}
 }
