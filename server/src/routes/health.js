@@ -1,20 +1,24 @@
+import express from 'express';
 import database from '#database/client.js';
 
-const routes = app => {
-	app.get('/api/health', async (_req, res) => {
-		try {
-			await database.query('SELECT 1');
-			return res.status(200).json({
-				status: 'ok',
-				database: 'connected',
-			});
-		} catch {
-			return res.status(503).json({
-				status: 'unavailable',
-				database: 'disconnected',
-			});
-		}
-	});
-};
+const router = express.Router();
 
-export default routes;
+router.get('/', async (_req, res) => {
+	res.set('Cache-Control', 'no-store');
+
+	try {
+		await database.query('SELECT 1');
+		return res.status(200).json({
+			status: 'ok',
+			database: 'connected',
+		});
+	} catch (error) {
+		return res.status(503).json({
+			status: 'unavailable',
+			database: 'disconnected',
+			error: error?.message || 'Unknown error',
+		});
+	}
+});
+
+export default router;
