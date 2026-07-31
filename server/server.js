@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import cors from 'cors';
+import 'colors';
 import express from 'express';
 import errorHandler from '#middleware/errorHandler.js';
 import logger from '#middleware/logger.js';
