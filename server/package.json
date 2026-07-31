@@ -5,7 +5,6 @@
 	"private": true,
 	"type": "module",
 	"imports": {
-		"#config/*": "./src/config/*",
 		"#controllers/*": "./src/controllers/*",
 		"#database/*": "./src/database/*",
 		"#repositories/*": "./src/database/repositories/*",
@@ -22,7 +21,8 @@
 		"docker:logs": "docker compose -f ../compose.yaml logs -f",
 		"db:migrate": "node src/scripts/migrate.js",
 		"db:seed": "node src/scripts/seed.js",
-		"db:setup": "bun run docker:up && bun run db:migrate && bun run db:seed",
+		"db:setup": "docker compose -f ../compose.yaml up -d && node src/scripts/migrate.js && node src/scripts/seed.js",
+		"db:reset": "docker compose -f ../compose.yaml down -v && docker compose -f ../compose.yaml up -d && node src/scripts/migrate.js && node src/scripts/seed.js",
 		"lint": "biome check .",
 		"format": "biome format --write ."
 	},
