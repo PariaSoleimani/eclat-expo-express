@@ -10,28 +10,6 @@ const database = new Pool({
 	connectionTimeoutMillis: 5_000,
 });
 
-// let connectionId = 0;
-
-// database.on('connect', client => {
-// 	connectionId++;
-// 	const id = connectionId;
-// 	client.connectionId = id;
-// 	console.log(`🔵 CONNECTION #${id} CREATED`);
-// 	console.log(`   📊 Pool: ${database.totalCount} total, ${database.idleCount} idle`);
-// });
-
-// database.on('acquire', client => {
-// 	const id = client.connectionId || '?';
-// 	console.log(`🟢 CONNECTION #${id} ACQUIRED (in use)`);
-// 	console.log(`   📊 Pool: ${database.totalCount} total, ${database.idleCount} idle`);
-// });
-
-// database.on('remove', client => {
-// 	const id = client.connectionId || '?';
-// 	console.log(`🔴 CONNECTION #${id} REMOVED (closed)`);
-// 	console.log(`   📊 Pool: ${database.totalCount} total, ${database.idleCount} idle`);
-// });
-
 database.on('error', error => {
 	console.error('Unexpected PostgreSQL pool error:', error?.message || 'Unknown error');
 });
