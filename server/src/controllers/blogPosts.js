@@ -10,7 +10,7 @@ export const getBlogPosts = async (_req, res) => {
 };
 
 export const getBlogPostBySlug = async (req, res) => {
-	res.set('Cache-Control', 'public, max-age=300');
+	res.set('Cache-Control', 'max-age=300');
 
 	const post = await findBlogPostBySlug(req.params.slug);
 
