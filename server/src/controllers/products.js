@@ -8,8 +8,7 @@ import {
 } from '#repositories/products.js';
 import { HttpError } from '#utils/error.js';
 import { sendSuccess } from '#utils/response.js';
-import { isUuid } from '#utils/uuid.js';
-import { normalizeNumberQuery, normalizeQuery, normalizeSearchQuery } from '#utils/validation.js';
+import { isUuid, normalizeNumberQuery, normalizeQuery, normalizeSearchQuery } from '#utils/validation.js';
 
 export const getProducts = async (req, res) => {
 	res.set('Cache-Control', 'max-age=60');

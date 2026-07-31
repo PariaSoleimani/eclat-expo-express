@@ -25,10 +25,10 @@ router.use('/categories', categoryRoutes);
 router.use('/product-types', productTypeRoutes);
 router.use('/auth', authRoutes);
 router.use('/products', productRoutes);
-
 router.use('/wishlist', wishlistRoutes);
-router.use('/admin', adminRoutes);
+
 router.use('/addresses', addressRoutes);
+router.use('/admin', adminRoutes);
 router.use('/cart', cartRoutes);
 router.use('/orders', orderRoutes);
 
