@@ -42,8 +42,7 @@ export const normalizeAudience = value => {
 	return audience;
 };
 
-
-export const normalizeQueryParams = value => {
+export const normalizeQuery = value => {
 	if (!value) {
 		return [];
 	}
@@ -60,7 +59,33 @@ export const normalizeQueryParams = value => {
 			.filter(v => v.length > 0);
 	}
 
-	return []
+	return [];
+};
+
+export const normalizeSearchQuery = value => {
+	if (!value) {
+		return '';
+	}
+
+	if (typeof value === 'string') {
+		return value.trim().toLowerCase();
+	}
+
+	return '';
+};
+
+export const normalizeNumberQuery = value => {
+	if (typeof value === 'string') {
+		const parsed = Number(value);
+
+		if (Number.isNaN(parsed)) {
+			return '';
+		}
+
+		return parsed;
+	}
+
+	return '';
 };
 
 export const normalizePhoneNumber = phone => {
