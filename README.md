@@ -50,3 +50,12 @@ All API routes are prefixed with `/api/v1`.
 - Auth: `/auth/signup`, `/auth/login`, `/auth/me`
 - Protected: `/cart`, `/wishlist`, `/addresses`, `/orders`
 - Admin: `/admin`
+
+
+## 🔗 Contact
+
+If you have any questions, feedback, or suggestions regarding the project, feel free to contact me!
+
+[![Telegram](https://img.shields.io/badge/Telegram-black?style=for-the-badge&logo=telegram&logoColor=white&color=%2326A5E4)](https://t.me/SheCodes)
+[![linkedin](https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white&color=%230A66C2)](https://www.linkedin.com/in/pariasoleimani)
+[![Telegram](https://img.shields.io/badge/Email-black?style=for-the-badge&logo=gmail&logoColor=white&color=%23EA4335)](mailto:paria.slmni@gmail.com)
