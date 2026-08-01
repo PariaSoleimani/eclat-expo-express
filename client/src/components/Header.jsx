@@ -1,12 +1,12 @@
 import { Feather, Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
-import useFetch from '@/hooks/useFetch';
+import { useCart } from '@/context/CartContext';
 import { COLORS } from '@/lib/colors';
 
 const Header = ({ title, showBack, showSearch, showCart, showLogo }) => {
 	const router = useRouter();
-	const { cartItemCount } = useFetch();
+	const { itemCount: cartItemCount } = useCart();
 
 	return (
 		<View style={styles.header}>

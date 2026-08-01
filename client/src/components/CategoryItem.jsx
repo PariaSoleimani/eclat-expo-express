@@ -9,7 +9,7 @@ const CategoryItem = ({ item, onPress }) => {
 			onPress={onPress}>
 			<View style={styles.iconWrap}>
 				<Ionicons
-					name={item.icon}
+					name={item.icon ?? 'sparkles-outline'}
 					size={23}
 					color={COLORS.primary.DEFAULT}
 				/>

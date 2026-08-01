@@ -31,7 +31,7 @@ const BannerCarousel = ({ banners, onExplore, paddingHorizontal = 0 , bannerButt
 				{banners.map(banner => (
 					<ImageBackground
 						key={banner.id}
-						source={{ uri: banner.imageUrl }}
+						source={{ uri: banner.url }}
 						style={[styles.banner, { width: bannerWidth }]}
 						imageStyle={styles.bannerImage}>
 						<View style={styles.bannerOverlay} />

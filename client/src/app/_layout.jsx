@@ -13,9 +13,9 @@ const RootLayout = () => {
 				<AuthProvider>
 					<CatalogProvider>
 						<CartProvider>
-							{/* <WishlistProvider> */}
+							<WishlistProvider>
 								<Stack screenOptions={{ headerShown: false }} />
-							{/* </WishlistProvider> */}
+							</WishlistProvider>
 						</CartProvider>
 					</CatalogProvider>
 				</AuthProvider>
