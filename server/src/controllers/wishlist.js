@@ -1,11 +1,11 @@
+import { findActiveProductId, findProductById } from '#repositories/products.js';
 import {
-	deleteWishlistItemByProduct,
-	findActiveProductId,
+	createWishlist,
+	createWishlistItem,
+	deleteWishlistItemByProductId,
 	findWishlistByUserId,
 	findWishlistItemByProductId,
-	findWishlistItems,
-	insertWishlist,
-	insertWishlistItem,
+	findWishlistItemIds,
 } from '#repositories/wishlist.js';
 import { HttpError } from '#utils/error.js';
 import { sendSuccess } from '#utils/response.js';
@@ -15,9 +15,11 @@ export const getWishlist = async (req, res) => {
 	res.set('Cache-Control', 'no-store');
 
 	const wishlist = await findWishlistByUserId(req.auth.userId);
-	const items = wishlist ? await findWishlistItems(wishlist.id) : [];
+	const itemIds = wishlist ? await findWishlistItemIds(wishlist.id) : [];
 
-	return sendSuccess(res, items);
+	const wishlistItems = await Promise.all(itemIds.map(itemId => findProductById(itemId.product_id)).filter(Boolean));
+
+	return sendSuccess(res, wishlistItems);
 };
 
 export const addWishlistItem = async (req, res) => {
@@ -38,17 +40,17 @@ export const addWishlistItem = async (req, res) => {
 	let wishlist = await findWishlistByUserId(req.auth.userId);
 
 	if (!wishlist) {
-		wishlist = await insertWishlist(req.auth.userId);
+		wishlist = await createWishlist(req.auth.userId);
 	}
 
 	const existing = await findWishlistItemByProductId(wishlist.id, productId);
 
 	if (!existing) {
-		await insertWishlistItem(wishlist.id, productId);
+		await createWishlistItem(wishlist.id, productId);
 	}
 
-	const items = await findWishlistItems(wishlist.id);
-	return sendSuccess(res, items, existing ? 200 : 201);
+	const item = await findProductById(productId);
+	return sendSuccess(res, item, existing ? 200 : 201);
 };
 
 export const removeWishlistItem = async (req, res) => {
@@ -64,12 +66,11 @@ export const removeWishlistItem = async (req, res) => {
 		throw new HttpError(404, 'Wishlist item not found.');
 	}
 
-	const deleted = await deleteWishlistItemByProduct(wishlist.id, req.params.productId);
+	const deleted = await deleteWishlistItemByProductId(wishlist.id, req.params.productId);
 
 	if (!deleted) {
 		throw new HttpError(404, 'Wishlist item not found.');
 	}
 
-	const items = await findWishlistItems(wishlist.id);
-	return sendSuccess(res, items);
+	return sendSuccess(res, deleted);
 };

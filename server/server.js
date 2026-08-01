@@ -34,5 +34,5 @@ app.use('/api/v1', router);
 app.use(errorHandler);
 
 app.listen(PORT, () => {
-	console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
+	console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`.green.underline);
 });

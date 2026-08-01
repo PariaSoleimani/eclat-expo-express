@@ -10,7 +10,8 @@
 		"#repositories/*": "./src/database/repositories/*",
 		"#routes/*": "./src/routes/*",
 		"#middleware/*": "./src/middleware/*",
-		"#utils/*": "./src/utils/*"
+		"#utils/*": "./src/utils/*",
+		"#config/*": "./src/config/*"
 	},
 	"scripts": {
 		"start": "NODE_ENV=production node server",

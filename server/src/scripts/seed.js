@@ -34,7 +34,7 @@ async function insertRows(client, table, rows) {
 		return 0;
 	}
 
-	const columns = Object.keys(rows[0]);
+	const columns = [...new Set(rows.flatMap(row => Object.keys(row)))];
 	const placeholders = columns.map((_, index) => `$${index + 1}`).join(', ');
 	const text = `INSERT INTO ${table} (${columns.join(', ')}) VALUES (${placeholders})`;
 

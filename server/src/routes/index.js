@@ -20,11 +20,11 @@ router.use('/health', healthRoute);
 router.use('/colors', colorRoutes);
 router.use('/materials', materialRoutes);
 router.use('/banners', bannerRoutes);
-router.use('/blog-posts', blogPostRoutes);
-router.use('/categories', categoryRoutes);
 router.use('/product-types', productTypeRoutes);
-router.use('/auth', authRoutes);
+router.use('/categories', categoryRoutes);
+router.use('/blog-posts', blogPostRoutes);
 router.use('/products', productRoutes);
+router.use('/auth', authRoutes);
 router.use('/wishlist', wishlistRoutes);
 
 router.use('/addresses', addressRoutes);

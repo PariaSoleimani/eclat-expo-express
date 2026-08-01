@@ -34,12 +34,12 @@ const buildProductFilters = ({ audience, productType, category, color, minPrice,
 		)`);
 	}
 
-	if (minPrice !== undefined && minPrice !== '') {
+	if (minPrice !== undefined) {
 		values.push(minPrice);
 		conditions.push(`products.base_price >= $${values.length}`);
 	}
 
-	if (maxPrice !== undefined && maxPrice !== '') {
+	if (maxPrice !== undefined) {
 		values.push(maxPrice);
 		conditions.push(`products.base_price <= $${values.length}`);
 	}
@@ -70,8 +70,6 @@ export const findProducts = async filters => {
 				products.gemstone,
 				products.rating,
 				products.review_count,
-				product_types.name AS product_type_name,
-				product_types.slug AS product_type_slug,
 				(
 					SELECT url
 					FROM product_images
@@ -87,6 +85,7 @@ export const findProducts = async filters => {
 		values,
 	);
 
+	console.log(values);
 	return rows;
 };
 
@@ -109,9 +108,13 @@ export const findProductById = async (id, { activeOnly = true } = {}) => {
 				products.gemstone,
 				products.rating,
 				products.review_count,
-				products.is_active,
-				product_types.name AS product_type_name,
-				product_types.slug AS product_type_slug
+				(
+					SELECT url
+					FROM product_images
+					WHERE product_images.product_id = products.id
+					ORDER BY product_images.is_primary DESC, product_images.sort_order ASC
+					LIMIT 1
+				) AS primary_image_url
 			FROM products
 			JOIN product_types ON product_types.id = products.product_type_id
 			WHERE ${conditions.join(' AND ')}
@@ -120,6 +123,19 @@ export const findProductById = async (id, { activeOnly = true } = {}) => {
 	);
 
 	return rows[0] ?? null;
+};
+
+export const findActiveProductId = async productId => {
+	const { rows } = await database.query(
+		`
+			SELECT id
+			FROM products
+			WHERE id = $1 AND is_active = true
+		`,
+		[productId],
+	);
+
+	return rows[0]?.id ?? null;
 };
 
 export const findProductImages = async productId => {

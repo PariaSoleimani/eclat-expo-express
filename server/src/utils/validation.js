@@ -1,5 +1,10 @@
 import { HttpError } from '#utils/error.js';
 
+const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+
+export const isUuid = value => typeof value === 'string' && UUID_PATTERN.test(value);
+
+
 export const requireText = (value, field) => {
 	const text = typeof value === 'string' ? value.trim() : '';
 
@@ -39,7 +44,7 @@ export const normalizeAudience = value => {
 			.filter(v => v.length > 0);
 	}
 
-	return audience;
+	return [];
 };
 
 export const normalizeQuery = value => {
@@ -75,17 +80,17 @@ export const normalizeSearchQuery = value => {
 };
 
 export const normalizeNumberQuery = value => {
-	if (typeof value === 'string') {
-		const parsed = Number(value);
-
-		if (Number.isNaN(parsed)) {
-			return '';
-		}
-
-		return parsed;
+	if (!value) {
+		return undefined;
 	}
 
-	return '';
+	const parsed = Number(value);
+
+	if (Number.isNaN(parsed)) {
+		return undefined;
+	}
+
+	return parsed;
 };
 
 export const normalizePhoneNumber = phone => {
@@ -98,8 +103,3 @@ export const normalizePhoneNumber = phone => {
 };
 
 export const isValidPhoneNumber = phone => /^\+\d{10,15}$/.test(phone);
-
-
-const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
-
-export const isUuid = value => typeof value === 'string' && UUID_PATTERN.test(value);

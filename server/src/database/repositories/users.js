@@ -18,12 +18,24 @@ export const findUserById = async id => {
 	return rows[0] ?? null;
 };
 
+export const findUserByPhoneWithPassword = async phone => {
+	const { rows } = await database.query(
+		`
+			SELECT id, name, phone, is_admin, url, password_hash
+			FROM users
+			WHERE phone = $1
+		`,
+		[phone],
+	);
+	return rows[0] ?? null;
+};
+
 export const createUser = async ({ name, phone, passwordHash }) => {
 	const { rows } = await database.query(
 		`
 			INSERT INTO users (id, name, phone, password_hash)
 			VALUES ($1, $2, $3, $4)
-			RETURNING id, name, is_admin, url
+			RETURNING id, name, phone, is_admin, url
 		`,
 		[crypto.randomUUID(), name, phone, passwordHash],
 	);

@@ -7,12 +7,12 @@ export const getHealth = async (_req, res) => {
 
 	try {
 		await pingDatabase();
+
+		return sendSuccess(res, {
+			status: 'ok',
+			database: 'connected',
+		});
 	} catch {
 		throw new HttpError(503, 'Database unavailable.');
 	}
-
-	return sendSuccess(res, {
-		status: 'ok',
-		database: 'connected',
-	});
 };
