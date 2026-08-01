@@ -4,7 +4,6 @@ const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3
 
 export const isUuid = value => typeof value === 'string' && UUID_PATTERN.test(value);
 
-
 export const requireText = (value, field) => {
 	const text = typeof value === 'string' ? value.trim() : '';
 
@@ -14,6 +13,17 @@ export const requireText = (value, field) => {
 
 	return text;
 };
+
+export const normalizeQuantity = value => {
+	const quantity = Number(value);
+
+	if (!Number.isInteger(quantity) || quantity < 1) {
+		throw new HttpError(400, 'Quantity must be a positive integer.');
+	}
+
+	return quantity;
+};
+
 
 export const parseBoolean = (value, field) => {
 	if (value === undefined) {
