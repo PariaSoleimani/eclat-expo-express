@@ -1,14 +1,18 @@
+import { useWishlist } from '@/context/WishlistContext';
+import { COLORS } from '@/lib/colors';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
-import useFetch from '@/hooks/useFetch';
-import { COLORS } from '@/lib/colors';
 
 const ProductCard = ({ product }) => {
 	const router = useRouter();
-	const { isWishlisted, toggleWishlist } = useFetch();
-	const imageUrl = product.images?.[0]?.url;
+	const { isWishlisted, toggleWishlist } = useWishlist();
+	const imageUrl = product.images?.[0]?.url ?? product.primary_image_url;
 	const wished = isWishlisted(product.id);
+
+	const handleWishlist = async () => {
+		await toggleWishlist(product.id);
+	};
 
 	return (
 		<Pressable
@@ -25,7 +29,7 @@ const ProductCard = ({ product }) => {
 				)}
 				<Pressable
 					style={styles.wishlistButton}
-					onPress={() => toggleWishlist(product.id)}>
+					onPress={handleWishlist}>
 					<Ionicons
 						style={{ transform: [{ translateY: 1 }] }}
 						name={wished ? 'heart' : 'heart-outline'}
@@ -61,7 +65,6 @@ const styles = StyleSheet.create({
 	card: {
 		backgroundColor: COLORS.surface.DEFAULT,
 		borderRadius: 16,
-		flex: 0,
 		overflow: 'hidden',
 		elevation: 0.7,
 		width: '100%',
