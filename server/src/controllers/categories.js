@@ -7,15 +7,13 @@ export const getCategories = async (_req, res) => {
 	res.set('Cache-Control', 'max-age=300');
 
 	const categories = await findAllCategories();
-	
-	const filters = {
-		category: normalizeQuery(category.slug),
-	};
 
 	const categoriesWithItems = await Promise.all(
 		categories.map(async category => ({
 			...category,
-			items: await findProducts(filters),
+			items: await findProducts({
+				category: normalizeQuery(category.slug),
+			}),
 		})),
 	);
 
