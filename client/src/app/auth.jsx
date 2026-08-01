@@ -17,31 +17,30 @@ const Field = ({ label, ...props }) => (
 );
 
 const AuthScreen = () => {
-	const { clearError, error, validateCredentials, verifyCode } = useAuth();
+	const { clearError, error, isLoading, login, signup } = useAuth();
 	const router = useRouter();
 
+	const [mode, setMode] = useState('signup');
 	const [name, setName] = useState('');
 	const [phone, setPhone] = useState('');
-	const [code, setCode] = useState('');
-	const [step, setStep] = useState('details');
+	const [password, setPassword] = useState('');
 
-	const handleSendCode = () => {
-		if (!validateCredentials({ name, phone })) {
-			return;
-		}
-		setStep('otp');
+	const isSignup = mode === 'signup';
+
+	const switchMode = nextMode => {
+		setMode(nextMode);
+		setPassword('');
+		clearError();
 	};
 
-	const handleVerifyCode = () => {
-		if (verifyCode({ code, name, phone })) {
+	const handleSubmit = async () => {
+		const success = isSignup
+			? await signup({ name, phone, password })
+			: await login({ phone, password });
+
+		if (success) {
 			router.replace('/');
 		}
-	};
-
-	const handleResetForm = () => {
-		setCode('');
-		clearError();
-		setStep('details');
 	};
 
 	return (
@@ -58,16 +57,28 @@ const AuthScreen = () => {
 					/>
 				</View>
 				<Text style={styles.brand}>ÉCLAT</Text>
-				<Text style={styles.title}>
-					{step === 'details' ? 'Welcome to the collection' : 'Verify your number'}
-				</Text>
+				<Text style={styles.title}>{isSignup ? 'Create your account' : 'Welcome back'}</Text>
 				<Text style={styles.subtitle}>
-					{step === 'details'
-						? 'Enter your info to discover pieces made to be kept.'
-						: `We sent a six-digit code to ${phone}.`}
+					{isSignup
+						? 'Join Éclat and explore the world of luxury.'
+						: 'Sign in with your phone number and password.'}
 				</Text>
-				{step === 'details' ? (
-					<View style={styles.form}>
+
+				<View style={styles.tabs}>
+					<Pressable
+						style={[styles.tab, !isSignup && styles.tabActive]}
+						onPress={() => switchMode('login')}>
+						<Text style={[styles.tabText, !isSignup && styles.tabTextActive]}>Log in</Text>
+					</Pressable>
+					<Pressable
+						style={[styles.tab, isSignup && styles.tabActive]}
+						onPress={() => switchMode('signup')}>
+						<Text style={[styles.tabText, isSignup && styles.tabTextActive]}>Sign up</Text>
+					</Pressable>
+				</View>
+
+				<View style={styles.form}>
+					{isSignup && (
 						<Field
 							label="Your name"
 							value={name}
@@ -75,43 +86,37 @@ const AuthScreen = () => {
 							placeholder="Name"
 							autoCapitalize="words"
 						/>
-						<Field
-							label="Phone number"
-							value={phone}
-							onChangeText={setPhone}
-							placeholder="+98 912 123 4567"
-							keyboardType="phone-pad"
-						/>
-						{error ? <Text style={styles.error}>{error}</Text> : null}
-						<Pressable
-							style={({ pressed }) => [styles.button, pressed && styles.buttonPressed]}
-							onPress={handleSendCode}>
-							<Text style={styles.buttonText}>Send verification code</Text>
-						</Pressable>
-					</View>
-				) : (
-					<View style={styles.form}>
-						<Field
-							label="Verification code"
-							value={code}
-							onChangeText={setCode}
-							placeholder="123456"
-							keyboardType="number-pad"
-							maxLength={6}
-						/>
-						{error && <Text style={styles.error}>{error}</Text>}
-						<Pressable
-							style={({ pressed }) => [styles.button, pressed && styles.buttonPressed]}
-							onPress={handleVerifyCode}>
-							<Text style={styles.buttonText}>Verify and enter</Text>
-						</Pressable>
-						<Pressable
-							style={({ pressed }) => [styles.secondaryButton, pressed && styles.secondaryButtonPressed]}
-							onPress={handleResetForm}>
-							<Text style={styles.secondaryText}>Use a different number</Text>
-						</Pressable>
-					</View>
-				)}
+					)}
+					<Field
+						label="Phone number"
+						value={phone}
+						onChangeText={setPhone}
+						placeholder="+98 912 123 4567"
+						keyboardType="phone-pad"
+						autoCapitalize="none"
+					/>
+					<Field
+						label="Password"
+						value={password}
+						onChangeText={setPassword}
+						placeholder={isSignup ? 'At least 8 characters' : 'Your password'}
+						secureTextEntry
+						autoCapitalize="none"
+					/>
+					{error && <Text style={styles.error}>{error}</Text>}
+					<Pressable
+						style={({ pressed }) => [
+							styles.button,
+							(pressed || isLoading) && styles.buttonPressed,
+							isLoading && styles.buttonDisabled,
+						]}
+						disabled={isLoading}
+						onPress={handleSubmit}>
+						<Text style={styles.buttonText}>
+							{isLoading ? 'Please wait…' : isSignup ? 'Create account' : 'Log in'}
+						</Text>
+					</Pressable>
+				</View>
 			</View>
 		</KeyboardAvoidingView>
 	);
@@ -136,7 +141,18 @@ const styles = StyleSheet.create({
 		lineHeight: 22,
 		marginTop: 9,
 	},
-	form: { gap: 14, marginTop: 30 },
+	tabs: {
+		backgroundColor: COLORS.primary[100],
+		borderRadius: 14,
+		flexDirection: 'row',
+		marginTop: 28,
+		padding: 4,
+	},
+	tab: { alignItems: 'center', borderRadius: 11, flex: 1, paddingVertical: 11 },
+	tabActive: { backgroundColor: COLORS.background.DEFAULT },
+	tabText: { color: COLORS.secondary.DEFAULT, fontSize: 13, fontWeight: '700' },
+	tabTextActive: { color: COLORS.primary.DEFAULT },
+	form: { gap: 14, marginTop: 22 },
 	label: { color: COLORS.primary.DEFAULT, fontSize: 13, fontWeight: '800', marginBottom: 7 },
 	input: {
 		backgroundColor: COLORS.primary[100],
@@ -155,10 +171,8 @@ const styles = StyleSheet.create({
 		paddingVertical: 16,
 	},
 	buttonPressed: { opacity: 0.86, transform: [{ scale: 0.98 }] },
+	buttonDisabled: { opacity: 0.7 },
 	buttonText: { color: COLORS.background.DEFAULT, fontSize: 15, fontWeight: '800' },
-	secondaryButton: { alignItems: 'center', paddingVertical: 10 },
-	secondaryButtonPressed: { opacity: 0.65 },
-	secondaryText: { color: COLORS.accent[900], fontSize: 13, fontWeight: '800' },
 });
 
 export default AuthScreen;

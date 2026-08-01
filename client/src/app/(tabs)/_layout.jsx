@@ -1,7 +1,7 @@
-// import { useAuth } from '@/context/AuthContext';
-import { COLORS } from '@/lib/colors';
 import { Ionicons } from '@expo/vector-icons';
 import { Redirect, Tabs, useSegments } from 'expo-router';
+import { useAuth } from '@/context/AuthContext';
+import { COLORS } from '@/lib/colors';
 
 const TABBAR_ICONS = {
 	index: ['home-outline', 'home'],
@@ -11,12 +11,12 @@ const TABBAR_ICONS = {
 };
 
 const TabLayout = () => {
-	// const { isAuthenticated } = useAuth();
-	// const route = useSegments()[0];
+	const { isAuthenticated } = useAuth();
+	const route = useSegments()[0];
 
-	// if (!isAuthenticated && route !== 'auth') {
-	// 	return <Redirect href="/auth" />;
-	// }
+	if (!isAuthenticated && route !== 'auth') {
+		return <Redirect href="/auth" />;
+	}
 
 	return (
 		<Tabs

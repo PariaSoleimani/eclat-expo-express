@@ -16,6 +16,7 @@
 				"expo-image": "^3.0.11",
 				"expo-linking": "^8.0.12",
 				"expo-router": "^6.0.24",
+				"expo-secure-store": "^57.0.1",
 				"expo-splash-screen": "^31.0.13",
 				"expo-status-bar": "^3.0.9",
 				"expo-symbols": "^1.0.8",
@@ -3507,6 +3508,13 @@
 				]
 			},
 			"sha512-KIssKXnwjrdCxPWC8GsMTfKTwng40VrCsO16O9x6fKlfUwBW8itxY9PpCGyQeMJkiEADa+DUhtrDgl+uHg4/DA=="
+		],
+
+		"expo-secure-store": [
+			"expo-secure-store@57.0.1",
+			"",
+			{ "peerDependencies": { "expo": "*" } },
+			"sha512-tLa1VmSadOq19mA/dwkl99RbHyjLE0T1qqBYMY3/OsguZTI+rlrDy/DDJjupqlVtmr95hD7o1pYqx5aL+B4YMA=="
 		],
 
 		"expo-server": [

@@ -1,7 +1,9 @@
 import { Stack } from 'expo-router';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { AuthProvider } from '@/context/AuthContext';
-import { MockDataProvider } from '@/context/MockDataContext';
+import { CartProvider } from '@/context/CartContext';
+import { CatalogProvider } from '@/context/CatalogContext';
+import { WishlistProvider } from '@/context/WishlistContext';
 import { COLORS } from '@/lib/colors';
 
 const RootLayout = () => {
@@ -9,9 +11,13 @@ const RootLayout = () => {
 		<SafeAreaProvider>
 			<SafeAreaView style={{ backgroundColor: COLORS.background.DEFAULT, flex: 1 }}>
 				<AuthProvider>
-					<MockDataProvider>
-						<Stack screenOptions={{ headerShown: false }} />
-					</MockDataProvider>
+					<CatalogProvider>
+						<CartProvider>
+							{/* <WishlistProvider> */}
+								<Stack screenOptions={{ headerShown: false }} />
+							{/* </WishlistProvider> */}
+						</CartProvider>
+					</CatalogProvider>
 				</AuthProvider>
 			</SafeAreaView>
 		</SafeAreaProvider>
