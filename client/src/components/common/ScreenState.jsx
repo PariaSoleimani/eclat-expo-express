@@ -33,7 +33,7 @@ const ScreenState = ({ mode = 'empty', icon, title, description, actionLabel, on
 };
 
 const styles = StyleSheet.create({
-	container: { alignItems: 'center', justifyContent: 'center', padding: 36, gap: 10 },
+	container: { alignItems: 'center', justifyContent: 'center', padding: 36, gap: 10, flex: 1 },
 	title: { color: COLORS.primary.DEFAULT, fontSize: 18, fontWeight: '700' },
 	description: {
 		color: COLORS.secondary.DEFAULT,
